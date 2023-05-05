@@ -16,6 +16,15 @@ function getElementPreco() {
 function getElementBotao() {
     return document.getElementById("botaoEnviarProduto")
 }
+
+function getElementByAA(id){
+    return document.getElementById(id);
+}
+
+var nomeProdutoId = "nomeProduto1";
+var cadastroProdutoskey = "cadastroProdutos5";
+
+
 function getElementCadastro1Storage() {
     const cadastroProdutoStorage =  localStorage.getItem("cadastroProdutos")
     console.log(cadastroProdutoStorage)
@@ -30,8 +39,8 @@ getElementBotao().addEventListener('click', function (event) {
    
 
     let valor1cadastro = {
-        Nome1: getElementNome().value,
-        Codigo1: getElementCodigo().value,
+        Nome1: getElementByAA(nomeProdutoId).value,
+        Codigo1: getElementByAA("codigoProduto").value,
         Peso1: getElementPeso().value,
         Preco1: getElementPreco().value
     };
@@ -48,8 +57,8 @@ getElementBotao().addEventListener('click', function (event) {
         localStorage.setItem("cadastroProdutos", JSON.stringify(lista))
     }
     //console.log(getElementCadastro1Storage())
-    getElementNome().value = ""
-    getElementCodigo().value = ""
+    getElementByAA(nomeProdutoId).value = ""
+    getElementByAA("codigoProduto").value = ""
     getElementPeso().value = ""
     getElementPreco().value = ""
 
